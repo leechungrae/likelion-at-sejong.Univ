@@ -20,7 +20,7 @@
                 
                   <div id="reply_<%= p.id %>">
                 <% p.replies.each do |r| %>
-                 <h6>re-> <%= r.content %></h6>
+                 <h6> re-><%= r.content %></h6>
                <% end %>
                 </div>
                
@@ -46,7 +46,7 @@ $(function() {
           id_of_post: post_id },
           success: function(){
               
-              $( "#reply_" + post_id ).append( "<p>" + post_content + "</p>");
+              $( "#reply_" + post_id ).append( "<h6>" + "re->" + post_content + "</h6>");
               $("#content_" + post_id).val('');
           },
           error: function(){
